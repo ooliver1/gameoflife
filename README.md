@@ -10,6 +10,6 @@ My attempt at Conway's game of life, in C.
 Install [CMake](https://cmake.org).
 
 ```bash
-cmake --build build
 cmake -Bbuild
+cmake --build build
 ```
