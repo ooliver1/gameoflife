@@ -4,9 +4,11 @@
 // Cross-platform sleep function
 #ifdef _WINDOWS
 #include <windows.h>
+#define Clear() system("cls")
 #else
 #include <unistd.h>
 #define Sleep(x) usleep((x)*1000000)
+#define Clear() system("clear")
 #endif
 
 const int WIDTH = 30;
@@ -22,7 +24,7 @@ const int START[STARTING_AMOUNT][2] = {{2, 1}, {3, 1}, {3, 2}, {2, 3}, {3, 3},
 
 void print_board(int (*board_ptr)[HEIGHT][WIDTH]) {
     // Terminal clear.
-    printf("%s", ANSII_CLEAR);
+    Clear();
 
     for (int x = 0; x < HEIGHT; x++) {
         for (int y = 0; y < WIDTH; y++) {
